@@ -1,0 +1,34 @@
+name: DungeonRoam
+main: com.patric.dungeonsroam.Main
+version: 1.0-SNAPSHOT
+api-version: "1.21"
+load: STARTUP
+description: >
+  A configurable open-world RPG framework that swaps inventories, manages kits, and layers
+  commerce/encounters safely into designated worlds.
+author: mcexpv2
+softdepend:
+  - Vault
+  - XConomy
+  - WorldGuard
+  - ExecutableItems
+  - Citizens
+commands:
+  rpg:
+    description: Entry point for DungeonRoam RPG commands.
+    usage: /rpg <subcommand>
+    permission: openworldrpg.use
+    permission-message: You do not have permission to use DungeonRoam command.
+permissions:
+  openworldrpg.use:
+    description: Allows using the /rpg command.
+    default: true
+  openworldrpg.builder:
+    description: Allows opening the RPG kit builder.
+    default: true
+  openworldrpg.shop:
+    description: Allows using the RPG shop GUI.
+    default: true
+  openworldrpg.admin.*:
+    description: Administrator-level DungeonRoam permissions.
+    default: op

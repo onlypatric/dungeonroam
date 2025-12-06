@@ -7,10 +7,110 @@
     <groupId>com.patric.dungeonsroam</groupId>
     <artifactId>dungeonroam</artifactId>
     <version>1.0-SNAPSHOT</version>
+    <name>DungeonRoam</name>
+    <description>Open-world RPG framework targeting Paper 1.21.8.</description>
 
     <properties>
         <maven.compiler.source>17</maven.compiler.source>
         <maven.compiler.target>17</maven.compiler.target>
+        <paper.version>1.21.8-R0.1-SNAPSHOT</paper.version>
+        <acf.version>0.5.1-SNAPSHOT</acf.version>
+        <triumph-gui.version>3.1.12</triumph-gui.version>
+        <configurate.version>4.2.0</configurate.version>
+        <adventure.version>4.24.0</adventure.version>
+        <bkcommonlib.version>3b44f8bece00450d4f647ab3b9ba2439b73bef2c</bkcommonlib.version>
+        <vault.version>1.7.3</vault.version>
+        <item-nbt.version>2.12.0-RC1</item-nbt.version>
     </properties>
 
+    <repositories>
+        <repository>
+        <id>codemc-repo</id>
+        <url>https://repo.codemc.io/repository/maven-public/</url>
+        <layout>default</layout>
+        </repository>
+        <repository>
+            <id>papermc-public</id>
+            <name>PaperMC Repository</name>
+            <url>https://repo.papermc.io/repository/maven-public/</url>
+        </repository>
+        <repository>
+            <id>aikar-snapshots</id>
+            <name>Aikar Snapshot Repository</name>
+            <url>https://repo.aikar.co/content/groups/aikar/</url>
+            <snapshots>
+                <enabled>true</enabled>
+            </snapshots>
+        </repository>
+        <repository>
+            <id>codemc-public</id>
+            <name>CodeMC Shared Repository</name>
+            <url>https://repo.codemc.io/repository/maven-public/</url>
+        </repository>
+        <repository>
+            <id>dmulloy2</id>
+            <name>dmulloy2 Shared</name>
+            <url>https://repo.dmulloy2.net/nexus/content/groups/public/</url>
+        </repository>
+        <repository>
+            <id>jitpack</id>
+            <name>JitPack</name>
+            <url>https://jitpack.io</url>
+        </repository>
+    </repositories>
+
+    <dependencies>
+        <dependency>
+            <groupId>io.papermc.paper</groupId>
+            <artifactId>paper-api</artifactId>
+            <version>${paper.version}</version>
+            <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>co.aikar</groupId>
+            <artifactId>acf-paper</artifactId>
+            <version>${acf.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.spongepowered</groupId>
+            <artifactId>configurate-yaml</artifactId>
+            <version>${configurate.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>dev.triumphteam</groupId>
+            <artifactId>triumph-gui</artifactId>
+            <version>${triumph-gui.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>net.kyori</groupId>
+            <artifactId>adventure-platform-bukkit</artifactId>
+            <version>4.4.0</version>
+        </dependency>
+        <dependency>
+            <groupId>net.kyori</groupId>
+            <artifactId>adventure-api</artifactId>
+            <version>${adventure.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.github.bergerkiller</groupId>
+            <artifactId>BKCommonLib</artifactId>
+            <version>${bkcommonlib.version}</version>
+            <scope>provided</scope>
+            <optional>true</optional>
+        </dependency>
+        <dependency>
+            <groupId>com.github.MilkBowl</groupId>
+            <artifactId>Vault</artifactId>
+            <version>${vault.version}</version>
+            <scope>provided</scope>
+            <optional>true</optional>
+        </dependency>
+        <dependency>
+            <groupId>de.tr7zw</groupId>
+            <artifactId>item-nbt-api</artifactId>
+            <version>${item-nbt.version}</version>
+            <scope>provided</scope>
+            <optional>true</optional>
+        </dependency>
+    </dependencies>
 </project>

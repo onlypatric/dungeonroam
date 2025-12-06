@@ -1,0 +1,29 @@
+rpgWorlds:
+  - RPG_World1
+  - DungeonRealm
+useWorldGuard: true
+regionInventorySwitch: false
+allowPVP: false
+safeRegions:
+  - SpawnCity
+  - CityMarket
+
+inventory:
+  preferSharedEnderChest: false
+
+economy:
+  useVault: true
+  useXConomy: true
+  startingBalance: 0.0
+  currencyName: "Coins"
+
+kitBuilder:
+  enabled: true
+  forceSafeZones: true
+
+shop:
+  title: "&8Open World RPG Shop"
+  rows: 3
+
+logging:
+  debug: false
