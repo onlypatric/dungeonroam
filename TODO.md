@@ -1,16 +1,18 @@
 # TODO
 
 ## Core RPG Mode setup
-- [ ] Define `config.yml` entries (`rpgWorlds`, `useWorldGuard`, environment overrides) and ensure defaults cover multi-world support plus optional safe/danger tags.
-- [ ] Detect world entry/exit via `PlayerChangedWorldEvent`/`PlayerTeleportEvent` and gate RPG behavior to configured worlds.
-- [ ] Provide toggles for disabling vanilla systems (mob spawning, PvP) inside RPG worlds and document how servers should align paper/server settings.
-- [ ] Consolidate core services so each test harness or integration run can reuse the same bootstrapping helpers (plugin loader, mock vault, registry patching) without duplicating setup code.
-- [ ] Outline the runtime responsibilities within the core module:
+- [x] Define `config.yml` entries (`rpgWorlds`, `useWorldGuard`, environment overrides) and ensure defaults cover multi-world support plus optional safe/danger tags.
+- [x] Detect world entry/exit via `PlayerChangedWorldEvent`/`PlayerTeleportEvent` and gate RPG behavior to configured worlds.
+- [x] Provide toggles for disabling vanilla systems (mob spawning, PvP) inside RPG worlds and document how servers should align paper/server settings.
+- [x] Consolidate core services so each test harness or integration run can reuse the same bootstrapping helpers (plugin loader, mock vault, registry patching) without duplicating setup code.
+- [x] Outline the runtime responsibilities within the core module:
   - Inventory swap service persists both normal and RPG inventories per player/world, capturing armor/offhand/enderchest states before transitions.
   - Player data manager handles YAML-backed persistence (`playerdata.yml`) and ensures async flushes happen through Bukkit schedulers.
   - Kit, economy, and shop managers are responsible for exposing context-aware commands and GUI entry points, even when the actual GUI is not yet implemented.
   - Core listeners respond to world changes, teleport events, and optional region switches to keep inventories and RPG state consistent.
-- [ ] Document configuration/command expectations in TODO so the next round of work can reference the desired command tree, economy hooks, and safe-zone flags.
+- [x] Document configuration/command expectations in TODO so the next round of work can reference the desired command tree, economy hooks, and safe-zone flags.
+  - Core `/rpg` command currently exposes `reload`, `builder`, `shop`, `stats`, and `where`; only `reload` and `where` perform actions, and builder/shop/stats remain placeholders for upcoming UI-driven features.
+  - `config.yml` now carries `vanillaOverrides.disableVanillaMobSpawns` and `vanillaOverrides.enforceNoPvp` flags alongside world lists and safe-region placeholders, forming the baseline for safe/danger zoning once WorldGuard hooks arrive.
 
 ## Inventory & Persistence
 - [ ] Save a player’s original inventory/armor/offhand/ender chest when they enter an RPG world, storing data per player UUID + world.

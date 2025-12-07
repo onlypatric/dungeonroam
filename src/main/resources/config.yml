@@ -8,6 +8,10 @@ safeRegions:
   - SpawnCity
   - CityMarket
 
+vanillaOverrides:
+  disableVanillaMobSpawns: false
+  enforceNoPvp: true
+
 inventory:
   preferSharedEnderChest: false
 
