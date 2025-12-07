@@ -1,5 +1,5 @@
 name: DungeonRoam
-main: com.patric.dungeonsroam.Main
+main: com.patric.dungeonsroam.DungeonRoamPlugin
 version: 1.0-SNAPSHOT
 api-version: "1.21"
 load: STARTUP
